@@ -1,0 +1,13 @@
+.profile__button_add {
+    width: 150px;
+    height: 50px;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    background: url(../../../images/profile__button_add.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+}

@@ -1,0 +1,14 @@
+@import url(./__button/element__button.css);
+@import url(./__content/element__content.css);
+@import url(./__title/element__title.css);
+@import url(./__img/element__img.css);
+
+.element {
+    width: 282px;
+    height: 362px;
+    background: #fff;
+    color: #000;
+    border-radius: 10px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}

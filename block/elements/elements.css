@@ -1,0 +1,15 @@
+.elements {
+    display: -ms-grid;
+    display: grid;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 890px;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    grid-template-columns: repeat(auto-fit, minmax(282px, 1fr));
+    grid-row-gap: 18px;
+    grid-column-gap: 21px;
+    /* grid-gap: 18px 21px; */
+    justify-items: center;
+}

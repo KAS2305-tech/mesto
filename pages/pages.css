@@ -9,11 +9,10 @@
 @import url(../block/footer/footer.css);
 @import url(../block/elements/elements.css);
 @import url(../block/element/element.css);
-@import url(../block/pop-up/pop-up.css);
+@import url(../block/popup/popup.css);
+@import url(../block/active/active.css);
+@import url(../block/overlay/overlay.css);
 
-/* * {
-    border: solid red 1px;
-} */
 
 
 

@@ -1,0 +1,22 @@
+@import url(./__title/popup__title.css);
+@import url(./__close/popup__close.css);
+@import url(./__submit/popup__submit.css);
+@import url(./__body/popup__body.css);
+.popup {
+    position: absolute;
+    flex-direction: column;
+    display: none;
+    z-index: 10;
+    max-width: 430px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 34px 36px 36px;
+    background: #fff;
+    color: #000;
+    border-radius: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 200ms ease-in-out;
+}
+

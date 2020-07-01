@@ -1,4 +1,5 @@
 @import url(../vendor/normalize.css);
+@import url(../block/root.css/root.css);
 @import url(../vendor/fonts/fonst.css);
 @import url(../block/header/header.css);
 @import url(../block/profile/profile.css);
@@ -8,18 +9,11 @@
 @import url(../block/footer/footer.css);
 @import url(../block/elements/elements.css);
 @import url(../block/element/element.css);
+@import url(../block/pop-up/pop-up.css);
 
-body {
-    margin: 0;
-    padding: 0;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    min-width: 1200px;
-    width: 100%;
-    background: #000;
-    color: #fff;
-    font-family: Inter, sans-serif;
-}
+/* * {
+    border: solid red 1px;
+} */
 
 
 

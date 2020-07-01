@@ -8,9 +8,12 @@
     background-image: url(../../../images/profile__button_edit.png);
     background-repeat: no-repeat;
     background-position: center;
-    padding-bottom: -60px;
-    position: absolute;
-    right: 0;
-    top: 38px;
+    display: flex;
+    align-items: center;
     cursor: pointer;
+}
+@media screen and (max-width: 400px) {
+    .profile__button_edit {
+        top: 28px;
+    }
 }

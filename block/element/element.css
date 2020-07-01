@@ -4,8 +4,7 @@
 @import url(./__img/element__img.css);
 
 .element {
-    width: 282px;
-    height: 362px;
+    max-width: 282px;
     background: #fff;
     color: #000;
     border-radius: 10px;

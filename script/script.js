@@ -2,7 +2,7 @@ let buttonEdit = document.querySelector('.profile__button_edit');
 let buttonClose = document.querySelector('.popup__close');
 let overlay = document.querySelector('.overlay');
 let popup = document.getElementById('popup');
-let popupClose = document.querySelector('.popup__close');
+let popupClose = document.querySelector('.popup__button_close');
 
 //ФУНКЦИЯ ДЛЯ КНОПКИ РЕДАКТИРОВАНИЯ
 

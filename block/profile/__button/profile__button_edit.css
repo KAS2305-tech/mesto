@@ -12,6 +12,9 @@
     align-items: center;
     cursor: pointer;
 }
+.profile__button_edit:hover {
+    opacity: 0.8;
+}
 @media screen and (max-width: 400px) {
     .profile__button_edit {
         top: 28px;

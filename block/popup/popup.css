@@ -1,6 +1,6 @@
 @import url(./__title/popup__title.css);
-@import url(./__close/popup__close.css);
-@import url(./__submit/popup__submit.css);
+@import url(./__button/popup__button_close.css);
+@import url(./__button/popup__button_submit.css);
 @import url(./__body/popup__body.css);
 .popup {
     position: absolute;

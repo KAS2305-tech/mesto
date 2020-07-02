@@ -26,8 +26,8 @@ popupClose.addEventListener('click', closeClick);
 
 //ОТПРАВКА ФОРМЫ
 // Находим форму в DOM
-let formElement = // Воспользуйтесь методом querySelector()
-
+let formElement = document.querySelector('.popup__body');// Воспользуйтесь методом querySelector() +
+let submit = document.querySelector('.submit');
 // Обработчик «отправки» формы, хотя пока
 // она никуда отправляться не будет
 function formSubmitHandler (evt) {
@@ -35,15 +35,19 @@ function formSubmitHandler (evt) {
                         // Так мы можем определить свою логику отправки.
                         // О том, как это делать, расскажем позже.
 
-    // Находим поля формы в DOM
-    let nameInput = // Воспользуйтесь инструментом .querySelector()
-    let jobInput = // Воспользуйтесь инструментом .querySelector()
-
+    // Находим поля формы в DOM +
+    let nameInput = document.querySelector('.popup__body_name'); // Воспользуйтесь инструментом .querySelector()
+    let jobInput = document.querySelector('.popup__body_job'); // Воспользуйтесь инструментом .querySelector()
+    
     // Получите значение полей из свойства value
 
-    // Выберите элементы, куда должны быть вставлены значения полей
-
-    // Вставьте новые значения с помощью textContent
+    
+    let sectionTitle =  document.querySelector('.section-title');
+    let sectionSubtitle =  document.querySelector('.section-subtitle');// Выберите элементы, куда должны быть вставлены значения полей
+    
+    sectionTitle.textContent = nameInput.value;
+    sectionSubtitle.textContent = jobInput.value;   // Вставьте новые значения с помощью textContent
+    closeClick();
 }
 
 // Прикрепляем обработчик к форме:

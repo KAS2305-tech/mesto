@@ -11,12 +11,15 @@
     display: flex;
     align-items: center;
     cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 18px;
 }
 .profile__button_edit:hover {
     opacity: 0.8;
 }
 @media screen and (max-width: 400px) {
     .profile__button_edit {
-        top: 28px;
+        top: 15px;
     }
 }

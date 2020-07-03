@@ -1,5 +1,8 @@
+@import url(./__info_job/profile__info_job.css);
+@import url(./__info_name/profile__info_name.css);
 .profile__info {
     margin: 0 auto 0 30px;
+    position: relative;
 }
 @media screen and (max-width: 400px) {
     .profile__info {

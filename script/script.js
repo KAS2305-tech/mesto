@@ -42,11 +42,11 @@ function formSubmitHandler (evt) {
     // Получите значение полей из свойства value
 
     
-    let sectionTitle =  document.querySelector('.section-title');
-    let sectionSubtitle =  document.querySelector('.section-subtitle');// Выберите элементы, куда должны быть вставлены значения полей
+    let profileName =  document.querySelector('.profile__info_name');
+    let profileJob =  document.querySelector('.profile__info_job');// Выберите элементы, куда должны быть вставлены значения полей
     
-    sectionTitle.textContent = nameInput.value;
-    sectionSubtitle.textContent = jobInput.value;   // Вставьте новые значения с помощью textContent
+    profileName.textContent = nameInput.value;
+    profileJob.textContent = jobInput.value;   // Вставьте новые значения с помощью textContent
     closeClick();
 }
 

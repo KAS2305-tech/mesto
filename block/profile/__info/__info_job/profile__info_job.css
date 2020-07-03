@@ -1,4 +1,4 @@
-.section-subtitle {
+.profile__info_job {
     font-weight: 400;  
     font-size: 18px;
     line-height: 22px;
@@ -7,7 +7,7 @@
     display: flex;
 }
 @media screen and (max-width: 400px) {
-    .section-subtitle {
+    .profile__info_job {
         font-size: 14px;
         line-height: 17px;
         padding: 0;

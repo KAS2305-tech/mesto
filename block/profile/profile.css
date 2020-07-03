@@ -15,11 +15,7 @@
     position: relative;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
-            justify-content: space-between;
-}
-.title_button {
-    display: flex;
-    padding: 18px 0 0;
+            justify-content: space-between;            
 }
 
 @media screen and (max-width: 400px) {

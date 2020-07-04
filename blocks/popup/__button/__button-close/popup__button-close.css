@@ -1,0 +1,20 @@
+.popup__button-close {
+    height: 40px;
+    width: 40px;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    background: url(../../../../images/pop-up__button-close.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    cursor: pointer;
+    position: absolute;
+    right: -40px;
+    top: -40px;
+    border: none;
+    z-index: 10;
+}
+.popup__button-close:hover {
+    opacity: 0.8;
+}

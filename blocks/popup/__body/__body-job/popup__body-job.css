@@ -1,0 +1,7 @@
+.popup__body-job {
+    border: none;
+    border-bottom: 1px solid #000000;;
+    margin-bottom: 48px;
+    padding-bottom: 13px;
+    width: 100%;
+}

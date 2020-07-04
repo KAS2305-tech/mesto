@@ -1,0 +1,11 @@
+@import url(./__body-job/popup__body-job.css);
+@import url(./__body-name/popup__body-name.css);
+
+.popup__body {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    margin-top: 54px;
+    width: 100%;
+    color: #000;
+}

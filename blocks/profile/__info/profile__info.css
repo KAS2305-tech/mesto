@@ -1,0 +1,14 @@
+@import url(./__info-job/profile__info-job.css);
+@import url(./__info-name/profile__info-name.css);
+
+.profile__info {
+    margin: 0 auto 0 30px;
+    position: relative;
+}
+@media screen and (max-width: 400px) {
+    .profile__info {
+        padding-top: 10px 0;
+        margin: 0 auto 36px;
+        align-items: center;
+    }
+}

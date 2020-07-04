@@ -7,6 +7,11 @@ let popupClose = document.querySelector('.popup__button-close');
 //ФУНКЦИЯ ДЛЯ КНОПКИ РЕДАКТИРОВАНИЯ
 
 function showClick() {
+
+// Получите значение полей из свойства value
+document.getElementById('name').placeholder = document.querySelector('.profile__info-name').textContent;
+document.getElementById('job').placeholder = document.querySelector('.profile__info-job').textContent;//ссылка на имя
+
     popup.classList.add('popup_active');
     overlay.classList.add('popup_active');
 }
@@ -39,12 +44,17 @@ function formSubmitHandler (evt) {
     let nameInput = document.querySelector('.popup__body-name'); // Воспользуйтесь инструментом .querySelector()
     let jobInput = document.querySelector('.popup__body-job'); // Воспользуйтесь инструментом .querySelector()
     
-    // Получите значение полей из свойства value
+    
+    
+
 
     
     let profileName =  document.querySelector('.profile__info-name');
     let profileJob =  document.querySelector('.profile__info-job');// Выберите элементы, куда должны быть вставлены значения полей
     
+
+
+
     profileName.textContent = nameInput.value;
     profileJob.textContent = jobInput.value;   // Вставьте новые значения с помощью textContent
     closeClick();

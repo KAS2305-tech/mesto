@@ -8,25 +8,25 @@ let popupClose = document.querySelector('.popup__button-close');
 
 function showClick() {
 
-// Получите значение полей из свойства value
-document.getElementById('name').placeholder = document.querySelector('.profile__info-name').textContent;
-document.getElementById('job').placeholder = document.querySelector('.profile__info-job').textContent;//ссылка на имя
+    // Получите значение полей из свойства value
+    document.getElementById('name').placeholder = document.querySelector('.profile__info-name').textContent; //ссылка на имя
+    document.getElementById('job').placeholder = document.querySelector('.profile__info-job').textContent;   //ссылка на работу
 
-    popup.classList.add('popup_active');
+    popup.classList.add('popup_active');  //присваивание дополнительного класса
     overlay.classList.add('popup_active');
 }
 
-buttonEdit.addEventListener('click', showClick);
+buttonEdit.addEventListener('click', showClick);  //запуск функции
 
 
 //ФНКЦИЯ ДЛЯ КНОПКИ ЗАКРЫТИЯ
 
 function closeClick() {
-    popup.classList.remove('popup_active');
+    popup.classList.remove('popup_active');  //удаление дополнительного класса
     overlay.classList.remove('popup_active');
 }
 
-popupClose.addEventListener('click', closeClick);
+popupClose.addEventListener('click', closeClick);  //запуск функции
 
 
 //ОТПРАВКА ФОРМЫ
@@ -45,15 +45,9 @@ function formSubmitHandler (evt) {
     let jobInput = document.querySelector('.popup__body-job'); // Воспользуйтесь инструментом .querySelector()
     
     
-    
-
-
-    
     let profileName =  document.querySelector('.profile__info-name');
     let profileJob =  document.querySelector('.profile__info-job');// Выберите элементы, куда должны быть вставлены значения полей
     
-
-
 
     profileName.textContent = nameInput.value;
     profileJob.textContent = jobInput.value;   // Вставьте новые значения с помощью textContent

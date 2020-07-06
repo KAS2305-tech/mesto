@@ -1,7 +1,7 @@
 @import url(./__avatar/profile__avatar.css);
 @import url(./__info/profile__info.css);
-@import url(./__button/__button-add/profile__button-add.css);
-@import url(./__button/__button-edit/profile__button-edit.css);
+@import url(./__button-add/profile__button-add.css);
+@import url(./__button-edit/profile__button-edit.css);
 
 .profile {
     margin: 40px auto;
@@ -23,10 +23,6 @@
         max-width: 400px;
         width: 100%;
         flex-direction: column;
-        margin: 38px auto 36px;
-        
-    }
-    .title_button {
-        padding: 0;
+        margin: 38px auto 36px;        
     }
 }

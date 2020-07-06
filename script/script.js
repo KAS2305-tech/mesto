@@ -9,8 +9,8 @@ let popupClose = document.querySelector('.popup__button-close');
 function showClick() {
 
     // Получите значение полей из свойства value
-    document.getElementById('name').placeholder = document.querySelector('.profile__info-name').textContent; //ссылка на имя
-    document.getElementById('job').placeholder = document.querySelector('.profile__info-job').textContent;   //ссылка на работу
+    document.getElementById('name').value = document.querySelector('.profile__info-name').textContent; //ссылка на имя
+    document.getElementById('job').value = document.querySelector('.profile__info-job').textContent;   //ссылка на работу
 
     popup.classList.add('popup_active');  //присваивание дополнительного класса
     overlay.classList.add('popup_active');
@@ -32,7 +32,7 @@ popupClose.addEventListener('click', closeClick);  //запуск функции
 //ОТПРАВКА ФОРМЫ
 // Находим форму в DOM
 let formElement = document.querySelector('.popup__body');// Воспользуйтесь методом querySelector() +
-let submit = document.querySelector('.submit');
+
 // Обработчик «отправки» формы, хотя пока
 // она никуда отправляться не будет
 function formSubmitHandler (evt) {
@@ -41,8 +41,8 @@ function formSubmitHandler (evt) {
                         // О том, как это делать, расскажем позже.
 
     // Находим поля формы в DOM +
-    let nameInput = document.querySelector('.popup__body-name'); // Воспользуйтесь инструментом .querySelector()
-    let jobInput = document.querySelector('.popup__body-job'); // Воспользуйтесь инструментом .querySelector()
+    let nameInput = document.getElementById('name'); // Воспользуйтесь инструментом .querySelector()
+    let jobInput = document.getElementById('job'); // Воспользуйтесь инструментом .querySelector()
     
     
     let profileName =  document.querySelector('.profile__info-name');

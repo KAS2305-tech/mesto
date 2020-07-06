@@ -2,6 +2,9 @@
 @import url(./__info/profile__info.css);
 @import url(./__button-add/profile__button-add.css);
 @import url(./__button-edit/profile__button-edit.css);
+@import url(./__info-job/profile__info-job.css);
+@import url(./__info-name/profile__info-name.css);
+
 
 .profile {
     margin: 40px auto;

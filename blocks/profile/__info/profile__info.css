@@ -1,6 +1,3 @@
-@import url(./__info-job/profile__info-job.css);
-@import url(./__info-name/profile__info-name.css);
-
 .profile__info {
     margin: 0 auto 0 30px;
     position: relative;

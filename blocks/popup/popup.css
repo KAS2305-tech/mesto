@@ -4,23 +4,10 @@
 @import url(./__body/popup__body.css);
 @import url(./__input/popup__input.css);
 @import url(./__overlay/popup__overlay.css);
+@import url(./__content/popup__content.css);
 
 .popup {
-    position: absolute;
-    flex-direction: column;
     display: none;
-    z-index: 100;
-    max-width: 430px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 34px 36px 36px;
-    background: #fff;
-    color: #000;
-    border-radius: 10px;
-    top: 50%;    
-    left: 50%;
-    transform: translate(-50%, -125%);
-    transition: 200ms ease-in-out;
 }
 
 @media screen and (max-width: 700px) {

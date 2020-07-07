@@ -13,7 +13,6 @@ function showClick() {
     document.getElementById('job').value = document.querySelector('.profile__info-job').textContent;   //ссылка на работу
 
     popup.classList.add('popup_active');  //присваивание дополнительного класса
-    overlay.classList.add('popup_active');
 }
 
 buttonEdit.addEventListener('click', showClick);  //запуск функции
@@ -23,7 +22,6 @@ buttonEdit.addEventListener('click', showClick);  //запуск функции
 
 function closeClick() {
     popup.classList.remove('popup_active');  //удаление дополнительного класса
-    overlay.classList.remove('popup_active');
 }
 
 popupClose.addEventListener('click', closeClick);  //запуск функции

@@ -1,11 +1,16 @@
 .profile__info {
-    margin: 0 auto 0 30px;
+    margin: 0 auto;
+    margin-left: 30px;
+    padding-top: 18px;
     position: relative;
+    max-width: 336px;
+    width: 100%;
 }
 @media screen and (max-width: 400px) {
     .profile__info {
-        padding-top: 10px 0;
+        padding-top: 10px;
         margin: 0 auto 36px;
         align-items: center;
+        max-width: 200px;
     }
 }

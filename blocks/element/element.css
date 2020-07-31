@@ -3,6 +3,7 @@
 @import url(./__title/element__title.css);
 @import url(./__img/element__img.css);
 @import url(./__trash/element__trash.css);
+@import url(./__button/element__button-active.css);
 
 .element {
     max-width: 282px;
@@ -12,4 +13,6 @@
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     position: relative;
+    overflow: hidden;
 }
+

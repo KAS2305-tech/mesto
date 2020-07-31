@@ -1,4 +1,12 @@
 .element__button-active {
-    opacity: 1;
-    background: url(https://code.s3.yandex.net/web-code/dom/heart-filled.svg) center no-repeat;
+    width: 30px;
+    height: 28px;
+    border: none;
+    cursor: pointer;
+    background: url(../../../images/like__active.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
 }

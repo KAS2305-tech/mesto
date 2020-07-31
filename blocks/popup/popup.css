@@ -5,21 +5,22 @@
 @import url(./__input/popup__input.css);
 @import url(./__overlay/popup__overlay.css);
 @import url(./__content/popup__content.css);
-
+@import url(./../popup-card/popup-card.css);
+@import url(./__img-title/popup__img-title.css);
 
 .popup {
-    display: none;
     width: 100%;
     min-height: 100vh;
     margin: 0 auto;
-    position: absolute;
-    transition: 200ms ease-in-out;
+    position: absolute;    
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     background-color: rgba(0, 0, 0, .5);
     z-index: 2;
+    visibility: hidden;
+    opacity: 0;
 }
 
 

@@ -1,4 +1,7 @@
 .popup_active {
-    display: flex; 
+    visibility: visible;
     opacity: 1;
+    -webkit-transition: visibility 1s, opacity .5s linear;
+    -o-transition: visibility 1s, opacity .5s linear;
+    transition: visibility 1s, opacity .5s linear;
 }

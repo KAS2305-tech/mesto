@@ -99,13 +99,6 @@ const initialCards = [
   const cardTemplate = document.querySelector('.card-item').content.querySelector('.element');
   const list = document.querySelector('.elements');
 
-  function handleLikeClick(){
-  }
-  
-
-  function handleImageClick(){
-  }
-
   function createCard (data) {  
     const cardElement = cardTemplate.cloneNode(true);
     const cardImage = cardElement.querySelector('.element__img');

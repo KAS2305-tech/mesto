@@ -6,7 +6,7 @@
 @import url(./__overlay/popup__overlay.css);
 @import url(./__content/popup__content.css);
 @import url(./../popup-card/popup-card.css);
-@import url(./__img-title/popup__img-title.css);
+@import url(./__img/popup__img.css);
 
 .popup {
     width: 100%;

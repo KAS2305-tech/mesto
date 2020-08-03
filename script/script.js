@@ -118,7 +118,7 @@ const initialCards = [
 
     
     const bigImageTitle = popupImgBig.querySelector('.popup__title-img');
-    const bigImage = popupImgBig.querySelector('.popup__content-img');
+    const bigImage = popupImgBig.querySelector('.popup-card__content-img');
     const bigImageTest = popupImgBig.querySelector('.big__img-test');
 
     cardLikeBtn.addEventListener('click', function (evt) {
@@ -157,7 +157,7 @@ const initialCards = [
 })
 
     const imagePopupTitle = document.querySelector('.popup__title-img');
-    const imagePopupBig = document.querySelector('.popup__content-img');
+    const imagePopupBig = document.querySelector('.popup-card__content-img');
     
 
   function handleImageClick(data){ //подтягивание большой картинки

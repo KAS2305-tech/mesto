@@ -17,7 +17,7 @@
     z-index: 10;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 800px) {
     .popup-card__content {
         width: 90%;
     }

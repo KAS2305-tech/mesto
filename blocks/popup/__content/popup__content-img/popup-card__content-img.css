@@ -1,4 +1,4 @@
-.popup-card__content-img{
+.popup__content-img{
     position: absolute;
     display: flex;
     z-index: 100;

@@ -16,10 +16,11 @@ const profileName =  document.querySelector('.profile__info-name');
 const jobInput = document.getElementById('job');
 const profileJob =  document.querySelector('.profile__info-job');
 const cardLikeBtn = document.querySelector('.element__button');  
+const cardDeleteBtn = document.querySelector('.element__trash');
 const cardImage = document.querySelector('.element__img');
 const cardTitle = document.querySelector('.element__title');
 const bigImageTitle = popupImgBig.querySelector('.popup__title-img');
-const bigImage = popupImgBig.querySelector('.popup-card__content-img');
+const bigImage = popupImgBig.querySelector('.popup__content-img');
 const bigImageTest = popupImgBig.querySelector('.big__img-test');
 
 //ПОПАП ОБЩИЙ
@@ -50,7 +51,7 @@ function closePopup(popupElement) {
 //ПОПАП ЗАКРЫТИЕ ОБЩИЙ КОНЕЦ
 
 //ФОРМА ДОБАВЛЕНИЯ КАРТОЧКИ
-const formContent = document.querySelector('.popup-card_mesto');//новый селектор
+const formContent = document.querySelector('.popup__mesto');//новый селектор
 const placeInput = formContent.querySelector('.popup__input-name');
 const urlInput = formContent.querySelector('.popup__input-link');
 
@@ -114,7 +115,11 @@ const initialCards = [
 
   initialCards.forEach((data) =>{
     renderCard(data);
-})
+});
+
+function renderCard(cardElement) {      
+  list.prepend(createCard (cardElement));
+}
 
   function createCard (data) {  
     const cardElement = cardTemplate.cloneNode(true);    
@@ -137,25 +142,21 @@ const initialCards = [
     });
 
     cardDeleteBtn.addEventListener('click',()=>{
-      handleDeleteClick();//КНОПКА УДАЛЕНИЯ
-    });
-
-    function handleDeleteClick(){  
       const delItem = cardDeleteBtn.closest('.element');//селектор родителя который нужно удалить
       delItem.remove();
-    }
+    });
+    
+    
     return cardElement;    
     }
 
 
     
 
-  function renderCard(cardElement) {      
-    list.prepend(createCard (cardElement));
-  }
+  
 
     const imagePopupTitle = document.querySelector('.popup__title-img');
-    const imagePopupBig = document.querySelector('.popup-card__content-img');
+    const imagePopupBig = document.querySelector('.popup__content-img');
     
 
   function handleImageClick(data){ //подтягивание большой картинки

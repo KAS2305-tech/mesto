@@ -1,6 +1,6 @@
 .popup__overlay {
     position: absolute;
-    /* opacity: 0; */
+    opacity: 0;
     transition: 200ms ease-in-out;
     top: 0;
     left: 0;
@@ -9,4 +9,5 @@
     background-color: rgba(0, 0, 0, .5);
     pointer-events: none;
     z-index: 5;
+    width: 100%;
 }

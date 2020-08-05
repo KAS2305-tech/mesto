@@ -1,5 +1,5 @@
-@import url(./popup-card__content-img/popup-card__content-img.css);
-.popup-card__content {
+@import url(./popup__content-img/popup-card__content-img.css);
+.popup__content {
     position: absolute;
     flex-direction: column;
     z-index: 100;
@@ -18,12 +18,12 @@
 }
 
 @media screen and (max-width: 800px) {
-    .popup-card__content {
-        width: 90%;
+    .popup__content {
+        width: 100%;
     }
 }
 @media screen and (max-width: 500px) {
-    .popup-card__content {
+    .popup__content {
         min-width: 350px;
         padding: 20px;
     }

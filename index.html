@@ -47,7 +47,7 @@
             <div class="popup__header">
                 <h2 class="popup__title">Редактировать профиль</h2>
             </div>
-            <form class="popup__body" id="popup__body_b" >
+            <form class="popup__body" id="popup__body_edit" >
                 <input class="popup__input" id="name" type="text">
                 <input class="popup__input" id="job" type="text"> 
                 <button class="popup__button-submit submit" type="submit" value="Сохранить">Сохранить</button>
@@ -56,25 +56,25 @@
         <div class="popup__overlay"></div>          
     </section>
 
-    <section class="popup popup__mesto" id="popup__card"> <!-- ПОПАП ДОБАВЛЕНИЕ КАРТОЧКИ новый селектор-->
+    <section class="popup popup_mesto" id="popup__card"> <!-- ПОПАП ДОБАВЛЕНИЕ КАРТОЧКИ новый селектор-->
         <div class="popup__content">
             <button class="popup__button-close button-add"></button>
             <div class="popup__header">
                 <h2 class="popup__title">Новое место</h2>
             </div>
-            <form class="popup__body"  id="popup__body_a" name="popup__body">
+            <form class="popup__body"  id="popup__body_mesto" name="popup__body">
                 <input class="popup__input popup__input-name" name="popup__input-name" id="place" type="text" placeholder='Название'>
                 <input class="popup__input popup__input-link" name="popup__input-link" id="link" type="text" placeholder='Ссылка на картинку'> 
-                <button class="popup__button-submit submit button-add-submit" type="submit" value="Сохранить">Сохранить</button>
+                <button class="popup__button-submit" type="submit" value="Сохранить">Сохранить</button>
             </form> 
         </div>
         <div class="popup__overlay"></div>          
     </section>
 
-    <section class="popup popup__img" id="popup__card-big"> <!-- ПОПАП БОЛЬШОЙ КАРТИНКИ-->
+    <section class="popup popup_img" id="popup__card-big"> <!-- ПОПАП БОЛЬШОЙ КАРТИНКИ-->
         <div class="popup__content-img">
             <button class="popup__button-close button-add popup__img-close"></button> 
-            <img class="big__img-test" src="" alt="">               
+            <img id="big__img-card" src="" alt="">               
             <h2 class="popup__title-img"></h2>                  
         </div>
         <div class="popup__overlay"></div>          

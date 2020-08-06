@@ -1,17 +1,19 @@
 @import url(./__title/popup__title.css);
+@import url(./__title/__title-img/popup__title-img.css);
 @import url(./__button-close/popup__button-close.css);
 @import url(./__button-submit/popup__button-submit.css);
 @import url(./__body/popup__body.css);
 @import url(./__input/popup__input.css);
 @import url(./__overlay/popup__overlay.css);
 @import url(./__content/popup__content.css);
-@import url(./__img/popup__img.css);
+@import url(./_img/popup_img.css);
 
 .popup {
     width: 100%;
-    min-height: 100vh;
+    height: 75vh;
     margin: 0 auto;
     position: absolute; 
+    top: 0;
     left: 0;
     right: 0;
     bottom: 0;

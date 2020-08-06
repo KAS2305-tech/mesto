@@ -3,14 +3,13 @@ const popupClose = document.querySelector('.popup__button-close');
 const overlay = document.querySelector('.popup__overlay');
 const editPopup = document.getElementById('popup-edit');
 const popupCard = document.getElementById('popup__card');
-const popupImg = document.querySelector('.popup__img');
+const popupImgBig = document.querySelector('.popup_img');
 const popupImgClose = document.querySelector('.popup__img-close');
 const buttonImg = document.querySelector('.card-item');
 const buttonAdd = document.querySelector('.profile__button-add');
 const popupCloseAdd = document.querySelector('.button-add');
 const addSubmit = document.querySelector('.button-add-submit');
-const formAdd = document.getElementById('popup__body_a');
-const popupImgBig = document.querySelector('.popup__img');
+const formAdd = document.getElementById('popup__body_mesto');
 const nameInput = document.getElementById('name');
 const profileName =  document.querySelector('.profile__info-name');
 const jobInput = document.getElementById('job');
@@ -21,7 +20,7 @@ const cardImage = document.querySelector('.element__img');
 const cardTitle = document.querySelector('.element__title');
 const bigImageTitle = popupImgBig.querySelector('.popup__title-img');
 const bigImage = popupImgBig.querySelector('.popup__content-img');
-const bigImageTest = popupImgBig.querySelector('.big__img-test');
+const bigImageCard = document.getElementById('big__img-card');
 
 //ПОПАП ОБЩИЙ
   function openPopup(popupElement) {
@@ -51,7 +50,7 @@ function closePopup(popupElement) {
 //ПОПАП ЗАКРЫТИЕ ОБЩИЙ КОНЕЦ
 
 //ФОРМА ДОБАВЛЕНИЯ КАРТОЧКИ
-const formContent = document.querySelector('.popup__mesto');//новый селектор
+const formContent = document.querySelector('.popup_mesto');//новый селектор
 const placeInput = formContent.querySelector('.popup__input-name');
 const urlInput = formContent.querySelector('.popup__input-link');
 
@@ -65,14 +64,10 @@ function formSubmitCard (evt) {
 formContent.addEventListener('submit', formSubmitCard);
 //ФОРМА ДОБАВЛЕНИЯ КАРТОЧКИ КОНЕЦ
 
-const formElement = document.getElementById('popup__body_b');
+const formElement = document.getElementById('popup__body_edit');
 //const formElement = document.querySelector('.popup__body');
 function formSubmitHandler (evt) {
     evt.preventDefault();
-    const nameInput = document.getElementById('name');
-    const jobInput = document.getElementById('job');
-    const profileName =  document.querySelector('.profile__info-name');
-    const profileJob =  document.querySelector('.profile__info-job');
     
     profileName.textContent = nameInput.value;
     profileJob.textContent = jobInput.value;
@@ -137,8 +132,8 @@ function renderCard(cardElement) {
     
     cardImage.addEventListener('click',()=>{
       bigImageTitle.textContent = data.name;
-      bigImageTest.src = cardImage.src;
-      openPopup(popupImg);//ПОПАП КАРТИНКИ
+      bigImageCard.src = cardImage.src;
+      openPopup(popupImgBig);//ПОПАП КАРТИНКИ
     });
 
     cardDeleteBtn.addEventListener('click',()=>{
@@ -165,7 +160,7 @@ function renderCard(cardElement) {
   }
 
 popupImgClose.addEventListener('click',()=>{
-  closePopup(popupImg);//ПОПАП КАРТИНКИ
+  closePopup(popupImgBig);//ПОПАП КАРТИНКИ
 });
 
 

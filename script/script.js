@@ -22,15 +22,19 @@ const bigImageTitle = popupImgBig.querySelector('.popup__title-img');
 const bigImage = popupImgBig.querySelector('.popup__content-img');
 const bigImageCard = document.getElementById('big__img-card');
 
+const popup = document.querySelector('.popup');
+
 //ПОПАП ОБЩИЙ
   function openPopup(popupElement) {
-    popupElement.classList.add('popup_active');    
-}  
+    popupElement.classList.add('popup_active'); 
+}
+
     buttonEdit.addEventListener('click', function () {
       nameInput.value = profileName.textContent;
       jobInput.value = profileJob.textContent;
     openPopup(editPopup);
 });
+
     buttonAdd.addEventListener('click', function () {
     formAdd.reset();
     openPopup(popupCard);    
@@ -39,14 +43,35 @@ const bigImageCard = document.getElementById('big__img-card');
 
 //ПОПАП ЗАКРЫТИЕ ОБЩИЙ
 function closePopup(popupElement) {
-  popupElement.classList.remove('popup_active');
+  popupElement.classList.remove('popup_active'); 
 }
+
   popupClose.addEventListener('click', function () {
   closePopup(editPopup);
 });
   popupCloseAdd.addEventListener('click', function () {
   closePopup(popupCard);  
 });
+  popupImgClose.addEventListener('click',()=>{
+  closePopup(popupImgBig);//ПОПАП КАРТИНКИ
+});
+
+const escClose = document.addEventListener('keydown', (evt) => {
+  if(evt.keyCode == 27 ) {
+    document.querySelector('.popup_active').classList.remove('popup_active');    
+  };
+});   //закрытие по esc относится к проектной работе №6
+
+
+function overlayClose(popupElement) {
+  document.addEventListener('click', (evt) => {
+    console.log(evt.target.classList);
+    if (evt.target.classList.contains('popup')) {   
+      closePopup(popupElement);      
+    }
+  });
+}     //закрытие по overlay относится к проектной работе №6
+
 //ПОПАП ЗАКРЫТИЕ ОБЩИЙ КОНЕЦ
 
 //ФОРМА ДОБАВЛЕНИЯ КАРТОЧКИ
@@ -58,7 +83,7 @@ function formSubmitCard (evt) {
     evt.preventDefault(); 
     
     renderCard({name:placeInput.value, link:urlInput.value});    
-    closePopup(popupCard);   
+    closePopup();   
 }
 
 formContent.addEventListener('submit', formSubmitCard);
@@ -146,10 +171,6 @@ function renderCard(cardElement) {
     }
 
 
-    
-
-  
-
     const imagePopupTitle = document.querySelector('.popup__title-img');
     const imagePopupBig = document.querySelector('.popup__content-img');
     
@@ -159,9 +180,7 @@ function renderCard(cardElement) {
     imagePopupBig.style.backgroundImage = `url($(data.link))`;
   }
 
-popupImgClose.addEventListener('click',()=>{
-  closePopup(popupImgBig);//ПОПАП КАРТИНКИ
-});
+
 
 
 

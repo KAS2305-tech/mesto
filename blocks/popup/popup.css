@@ -7,6 +7,7 @@
 @import url(./__overlay/popup__overlay.css);
 @import url(./__content/popup__content.css);
 @import url(./_img/popup_img.css);
+@import url(./__button-submit/popup__button-submit_disabled/popup__button-submit_disabled.css);
 
 .popup {
     width: 100%;

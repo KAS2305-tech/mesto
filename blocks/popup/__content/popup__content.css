@@ -1,4 +1,4 @@
-@import url(./popup__content-img/popup-card__content-img.css);
+@import url(./popup__content-img/popup__content-img.css);
 .popup__content {
     position: absolute;
     flex-direction: column;

@@ -47,12 +47,10 @@
             <div class="popup__header">
                 <h2 class="popup__title">Редактировать профиль</h2>
             </div>
-            <form class="popup__body" id="popup__body_edit" novalidate>
-                <input class="popup__input" id="name" type="text" minlength="2" maxlength="40" required autocomplete="off">
-                <span class="popup__error" id="name-error"></span>
-                <input class="popup__input" id="job" type="text" minlength="2" maxlength="200" required autocomplete="off"> 
-                <span class="popup__error" id="job-error"></span>
-                <button class="popup__button-submit popup__button-submit_disabled" type="submit" value="Сохранить">Сохранить</button>
+            <form class="popup__body" id="popup__body_edit">
+                <input class="popup__input" id="name" type="text">
+                <input class="popup__input" id="job" type="text"> 
+                <button class="popup__button-submit" type="submit" value="Сохранить">Сохранить</button>
             </form> 
         </div>
         <div class="popup__overlay" data-close></div>          
@@ -65,11 +63,9 @@
                 <h2 class="popup__title">Новое место</h2>
             </div>
             <form class="popup__body"  id="popup__body_mesto" name="popup__body">
-                <input class="popup__input popup__input-name" name="popup__input-name" id="place" type="text" placeholder='Название' required autocomplete="off">
-                <span class="popup__error" id="place-error"></span>
-                <input class="popup__input popup__input-link" name="popup__input-link" id="link" type="text" placeholder='Ссылка на картинку' required autocomplete="off"> 
-                <span class="popup__error" id="link-error"></span>
-                <button class="popup__button-submit popup__button-submit_disabled" type="submit" value="Сохранить">Сохранить</button>
+                <input class="popup__input popup__input-name" name="popup__input-name" id="place" type="text" placeholder="Название">
+                <input class="popup__input popup__input-link" name="popup__input-link" id="link" type="text" placeholder="Ссылка на картинку"> 
+                <button class="popup__button-submit" type="submit" value="Сохранить">Сохранить</button>
             </form> 
         </div>
         <div class="popup__overlay"></div>          
@@ -85,6 +81,5 @@
     </section>
 
     <script src="script/script.js"></script>
-    <!-- <script src="script/validate.js"></script> -->
 </body>
 </html>

@@ -56,22 +56,6 @@ function closePopup(popupElement) {
   closePopup(popupImgBig);//ПОПАП КАРТИНКИ
 });
 
-const escClose = document.addEventListener('keydown', (evt) => {
-  if(evt.keyCode == 27 ) {
-    document.querySelector('.popup_active').classList.remove('popup_active');    
-  };
-});   //закрытие по esc относится к проектной работе №6
-
-
-function overlayClose(popupElement) {
-  document.addEventListener('click', (evt) => {
-    console.log(evt.target.classList);
-    if (evt.target.classList.contains('popup')) {   
-      closePopup(popupElement);      
-    }
-  });
-}     //закрытие по overlay относится к проектной работе №6
-
 //ПОПАП ЗАКРЫТИЕ ОБЩИЙ КОНЕЦ
 
 //ФОРМА ДОБАВЛЕНИЯ КАРТОЧКИ
@@ -83,14 +67,13 @@ function formSubmitCard (evt) {
     evt.preventDefault(); 
     
     renderCard({name:placeInput.value, link:urlInput.value});    
-    closePopup();   
+    closePopup(popupCard);   
 }
 
 formContent.addEventListener('submit', formSubmitCard);
 //ФОРМА ДОБАВЛЕНИЯ КАРТОЧКИ КОНЕЦ
 
 const formElement = document.getElementById('popup__body_edit');
-//const formElement = document.querySelector('.popup__body');
 function formSubmitHandler (evt) {
     evt.preventDefault();
     

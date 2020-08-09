@@ -5,3 +5,7 @@
     padding-bottom: 13px;
     width: 100%;
 }
+
+.popup__input_type_error {
+    border-bottom: 1px solid red;
+}

@@ -8,6 +8,7 @@
 @import url(./__content/popup__content.css);
 @import url(./_img/popup_img.css);
 @import url(./__button-submit/popup__button-submit_disabled/popup__button-submit_disabled.css);
+@import url(./__error/popup__error.css);
 
 .popup {
     width: 100%;

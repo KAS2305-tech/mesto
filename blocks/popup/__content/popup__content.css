@@ -1,7 +1,10 @@
 @import url(./popup__content-img/popup__content-img.css);
 .popup__content {
     position: absolute;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     z-index: 100;
     max-width: 400px;
     width: 100%;
@@ -12,7 +15,11 @@
     border-radius: 10px;
     top: 10%;    
     left: 50%;
-    transform: translate(-50%, 0%);
+    -webkit-transform: translate(-50%, 0%);
+        -ms-transform: translate(-50%, 0%);
+            transform: translate(-50%, 0%);
+    -webkit-transition: 200ms ease-in-out;
+    -o-transition: 200ms ease-in-out;
     transition: 200ms ease-in-out;
     z-index: 11;
 }

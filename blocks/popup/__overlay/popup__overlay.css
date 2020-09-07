@@ -1,6 +1,8 @@
 .popup__overlay {
     position: absolute;
     opacity: 0;
+    -webkit-transition: 200ms ease-in-out;
+    -o-transition: 200ms ease-in-out;
     transition: 200ms ease-in-out;
     top: 0;
     left: 0;

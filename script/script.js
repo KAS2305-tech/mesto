@@ -27,6 +27,9 @@ const popup = document.querySelector('.popup');
 //ПОПАП ОБЩИЙ
   function openPopup(popupElement) {
     popupElement.classList.add('popup_active'); 
+
+    popupElement.addEventListener('click', overlayClose);
+    document.addEventListener('keydown', escClose);
 }
 
     buttonEdit.addEventListener('click', function () {
@@ -56,11 +59,46 @@ function closePopup(popupElement) {
   closePopup(popupImgBig);//ПОПАП КАРТИНКИ
 });
 
+// const escClose = document.addEventListener('keydown', (evt) => {
+//   if(evt.keyCode === 27 ) {
+//     document.querySelector('.popup_active').classList.remove('popup_active'); 
+//   };
+// });   //закрытие по esc относится к проектной работе №6
+
+
+const escClose = (evt) => {
+  const popupElement = document.querySelector('.popup_active')
+  if (evt.key === "Escape") {
+    popupElement.classList.remove('popup_active');
+          };
+  document.removeEventListener('keydown', escClose);
+};
+
+// function escClose(evt) {
+//   if(evt.keyCode === 27 ) {
+//     popup.querySelector('.popup_active').classList.remove('popup_active');   
+//   };
+// }
+
+
+const overlayClose = document.addEventListener('click', (evt) => {
+  if(evt.target.classList.contains('popup_active')) {
+    document.querySelector('.popup_active').classList.remove('popup_active');   
+  };
+ document.removeEventListener('click', overlayClose);
+});  //закрытие по overlay относится к проектной работе №6
+
+// function overlayClose(evt) {
+//   if(evt.target.classList.contains('popup_active')) {
+//     document.querySelector('.popup_active').classList.remove('popup_active');   
+//   };
+// }
+
 //ПОПАП ЗАКРЫТИЕ ОБЩИЙ КОНЕЦ
 
 //ФОРМА ДОБАВЛЕНИЯ КАРТОЧКИ
 const formContent = document.querySelector('.popup_mesto');//новый селектор
-const placeInput = formContent.querySelector('.popup__input-name');
+const placeInput = formContent.querySelector('.popup__input-mesto-name');
 const urlInput = formContent.querySelector('.popup__input-link');
 
 function formSubmitCard (evt) {

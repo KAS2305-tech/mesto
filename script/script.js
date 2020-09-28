@@ -51,6 +51,10 @@ const removeErrors = () => {
       item.classList.remove('popup__error_visible');
       item.textContent = null;
   });
+  const errorLine = Array.from(document.querySelectorAll('.popup__input'));
+  errorLine.forEach(item => {
+    item.classList.remove('popup__input_invalid');
+  });
 };
 
 //ПОПАП ЗАКРЫТИЕ ОБЩИЙ
@@ -58,8 +62,7 @@ function closePopup(popupElement) {
   document.querySelector('.popup__body').reset(); //сброс
   removeErrors ();
   popupElement.classList.remove('popup_active'); 
-
-}
+};
 
   popupClose.addEventListener('click', function () {
   closePopup(editPopup);

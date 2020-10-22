@@ -53,9 +53,9 @@ const urlInput = formContent.querySelector('.popup__input-link');
 const formElement = document.getElementById('popup__body_edit');
 const cardTemplate = document.querySelector('.card-item').content.querySelector('.element');
 const list = document.querySelector('.elements');
-const imagePopupTitle = document.querySelector('.popup__title-img');
-const imagePopupBig = document.querySelector('.popup__content-img');
-const btnElement = document.querySelector('.btn-submit');
+const btnElement = document.querySelector('.btn-submit'); 
+const template = document.querySelector('.card-item');
+
 
 /////////////////////////////////////////////////////////////
 const editForm = editPopup.querySelector('.popup__edit');
@@ -80,11 +80,9 @@ function removeErrors () {
   });
 };    
 
-
 //ПОПАП ОБЩИЙ
 function openPopup(popupElement) {
   popupElement.classList.add('popup_active'); 
-
   popupElement.addEventListener('click', overlayClose);
   document.addEventListener('keydown', escClose);
 }
@@ -105,8 +103,9 @@ function openPopup(popupElement) {
 function closePopup(popupElement) {
   document.querySelector('.popup__body').reset(); //сброс
   removeErrors ();
-  popupElement.classList.remove('popup_active');  
+  popupElement.classList.remove('popup_active');  //
   btnElement.setAttribute("disabled", "true"); //сброс кнопки
+  document.removeEventListener('keydown', escClose);
 };
 
   popupClose.addEventListener('click', function () {
@@ -119,34 +118,27 @@ function closePopup(popupElement) {
   closePopup(popupImgBig);//ПОПАП КАРТИНКИ
 });
 
-const overlayClose = document.addEventListener('click', (evt) => {
+
+function overlayClose(evt) {
   if(evt.target.classList.contains('popup_active')) {  
     closePopup(document.querySelector('.popup_active'));
   };
- document.removeEventListener('click', overlayClose);
-});
+};
 
 const escClose = (evt) => {
   const popupElement = document.querySelector('.popup_active')
   if (evt.key === "Escape") {
     closePopup(popupElement);
-          };
-  document.removeEventListener('keydown', escClose);
+    };  
 };
 
 function formSubmitCard (evt) { //переношу
-  evt.preventDefault(); 
-  
+  evt.preventDefault();   
   renderCard({name:placeInput.value, link:urlInput.value});    
   closePopup(popupCard);   
 }
 
 formContent.addEventListener('submit', formSubmitCard);
-//ФОРМА ДОБАВЛЕНИЯ КАРТОЧКИ КОНЕЦ
-function handleImageClick(data){ //подтягивание большой картинки
-imagePopupTitle.textContent = data.name;
-imagePopupBig.style.backgroundImage = `url($(data.link))`;
-}
 
 function formSubmitHandler (evt) {
   evt.preventDefault();
@@ -156,10 +148,10 @@ function formSubmitHandler (evt) {
   closePopup(editPopup);
 }
 formElement.addEventListener('submit', formSubmitHandler);
-//ОТПРАВКА ФОРМЫ КОНЕЦ
 
-function createCard (data) {  
-  const cardElement = cardTemplate.cloneNode(true);    
+//ОТПРАВКА ФОРМЫ КОНЕЦ
+function createCard (data) {  //использовать класс Card
+  const cardElement = cardTemplate.cloneNode(true);    //перенести в card
   const cardLikeBtn = cardElement.querySelector('.element__button');
   const cardDeleteBtn = cardElement.querySelector('.element__trash'); 
   const cardImage = cardElement.querySelector('.element__img');
@@ -168,31 +160,42 @@ function createCard (data) {
   cardTitle.textContent = data.name;  //маленькие карточки
   cardImage.src = data.link;
 
-  cardLikeBtn.addEventListener('click', function (evt) {
+  cardLikeBtn.addEventListener('click', function (evt) { //перенес
     evt.target.classList.toggle('element__button-active');
   });
   
-  cardImage.addEventListener('click',()=>{
-    bigImageTitle.textContent = data.name;
-    bigImageCard.src = cardImage.src;
-    openPopup(popupImgBig);//ПОПАП КАРТИНКИ
-  });
-
-  cardDeleteBtn.addEventListener('click',()=>{
+  cardDeleteBtn.addEventListener('click',()=>{ //перенес
     const delItem = cardDeleteBtn.closest('.element');//селектор родителя который нужно удалить
     delItem.remove();
   });
-  
-  
+
   return cardElement;    
   }
 
-
+  const openImagePopup = (name, link) => { //название и ссылка приходит в параметры
+    bigImageTitle.textContent = name;
+    bigImageCard.src = link;
+    openPopup(popupImgBig);
+  }
+////////////////////////////////////////////////
 initialCards.forEach((data) =>{
-  renderCard(data);
+  const card = new Card( data, template, openImagePopup );
+  const element = card.createElement(); //создали элемент который можно встроить в дом
+  list.append(element); // добавили карточку в список
 });
 
-function renderCard(cardElement) {      
-list.prepend(createCard (cardElement));
-}
+
+formContent.addEventListener('submit', (evt) => { //переношу
+  evt.preventDefault(); 
+  const name = placeInput.value;
+  const link = urlInput.value;
+  const newCard = {
+    name: placeInput.value, 
+    link: urlInput.value,
+  }
+});
+
+  function renderCard(cardElement) {      
+    list.prepend(createCard (cardElement));
+  }
 

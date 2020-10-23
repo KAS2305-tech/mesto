@@ -29,9 +29,6 @@ const initialCards = [
   }
 ];  
 //МАССИВ КАРТОЧЕК КОНЕЦ
-
-
-
 const buttonEdit = document.querySelector('.profile__button-edit');
 const popupClose = document.querySelector('.popup__button-close');
 const editPopup = document.getElementById('popup-edit');
@@ -51,7 +48,6 @@ const formContent = document.querySelector('.popup_mesto');
 const placeInput = formContent.querySelector('.popup__input-mesto-name');
 const urlInput = formContent.querySelector('.popup__input-link');
 const formElement = document.getElementById('popup__body_edit');
-const cardTemplate = document.querySelector('.card-item').content.querySelector('.element');
 const list = document.querySelector('.elements');
 const btnElement = document.querySelector('.btn-submit'); 
 const template = document.querySelector('.card-item');
@@ -101,11 +97,11 @@ function openPopup(popupElement) {
 
 //закрытие попапов
 function closePopup(popupElement) {
-  document.querySelector('.popup__body').reset(); //сброс
   removeErrors ();
   popupElement.classList.remove('popup_active');  //
   btnElement.setAttribute("disabled", "true"); //сброс кнопки
-  document.removeEventListener('keydown', escClose);
+  popupElement.removeEventListener('keydown', escClose);//Удаление обработчика
+  popupElement.removeEventListener('click', overlayClose);//Удаление обработчика
 };
 
   popupClose.addEventListener('click', function () {
@@ -121,7 +117,7 @@ function closePopup(popupElement) {
 
 function overlayClose(evt) {
   if(evt.target.classList.contains('popup_active')) {  
-    closePopup(document.querySelector('.popup_active'));
+    closePopup(evt.target);
   };
 };
 
@@ -141,8 +137,7 @@ function formSubmitCard (evt) { //переношу
 formContent.addEventListener('submit', formSubmitCard);
 
 function formSubmitHandler (evt) {
-  evt.preventDefault();
-  
+  evt.preventDefault();  
   profileName.textContent = nameInput.value;
   profileJob.textContent = jobInput.value;
   closePopup(editPopup);
@@ -151,51 +146,23 @@ formElement.addEventListener('submit', formSubmitHandler);
 
 //ОТПРАВКА ФОРМЫ КОНЕЦ
 function createCard (data) {  //использовать класс Card
-  const cardElement = cardTemplate.cloneNode(true);    //перенести в card
-  const cardLikeBtn = cardElement.querySelector('.element__button');
-  const cardDeleteBtn = cardElement.querySelector('.element__trash'); 
-  const cardImage = cardElement.querySelector('.element__img');
-  const cardTitle = cardElement.querySelector('.element__title');
-
-  cardTitle.textContent = data.name;  //маленькие карточки
-  cardImage.src = data.link;
-
-  cardLikeBtn.addEventListener('click', function (evt) { //перенес
-    evt.target.classList.toggle('element__button-active');
-  });
-  
-  cardDeleteBtn.addEventListener('click',()=>{ //перенес
-    const delItem = cardDeleteBtn.closest('.element');//селектор родителя который нужно удалить
-    delItem.remove();
-  });
-
-  return cardElement;    
-  }
-
-  const openImagePopup = (name, link) => { //название и ссылка приходит в параметры
-    bigImageTitle.textContent = name;
-    bigImageCard.src = link;
-    openPopup(popupImgBig);
-  }
-////////////////////////////////////////////////
-initialCards.forEach((data) =>{
   const card = new Card( data, template, openImagePopup );
   const element = card.createElement(); //создали элемент который можно встроить в дом
-  list.append(element); // добавили карточку в список
+return element;    
+}
+
+const openImagePopup = (name, link) => { //название и ссылка приходит в параметры
+  bigImageTitle.textContent = name;
+  bigImageCard.src = link;
+  openPopup(popupImgBig);
+}
+////////////////////////////////////////////////
+initialCards.forEach((data) =>{ ///ЗАМЕНА
+  const card = createCard (data)
+  list.append(card); // добавили карточку в список
 });
 
-
-formContent.addEventListener('submit', (evt) => { //переношу
-  evt.preventDefault(); 
-  const name = placeInput.value;
-  const link = urlInput.value;
-  const newCard = {
-    name: placeInput.value, 
-    link: urlInput.value,
-  }
-});
-
-  function renderCard(cardElement) {      
-    list.prepend(createCard (cardElement));
-  }
+function renderCard(cardElement) {      
+  list.prepend(createCard (cardElement));
+}
 

@@ -15,7 +15,7 @@ export class Card {
     this._element.remove();
   }
 
-  _likeHandler() { //добавление лайка
+  _likeHandler(evt) { //добавление лайка
     evt.target.classList.toggle('element__button-active');
   }
   _cardHandler() { //
@@ -24,8 +24,8 @@ export class Card {
 
   _setEventListeners () { //слушатели
     this._element.querySelector('.element__trash').addEventListener('click', () => this._deleteHandler()); //удаление
-    this._element.querySelector('.element__button').addEventListener('click', () => this._likeHandler()); //лайк
-    this._element.addEventListener('click', () => this._cardHandler()); //большая картинка
+    this._element.querySelector('.element__button').addEventListener('click', (evt) => this._likeHandler(evt)); //лайк
+    this._elementImg.addEventListener('click', () => this._cardHandler()); //большая картинка
   }
 
   createElement() { //создание карточки

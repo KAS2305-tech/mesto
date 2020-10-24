@@ -90,27 +90,31 @@ function openPopup(popupElement) {
 });
 
   buttonAdd.addEventListener('click', function () {
-  formAdd.reset();
-  openPopup(popupCard);    
+    formAdd.reset();
+    openPopup(popupCard);  
+    btnElement.setAttribute("disabled", "true"); //сброс при нажатии на "сохранить"
 });
 //ПОПАП ОБЩИЙ КОНЕЦ
 
 //закрытие попапов
 function closePopup(popupElement) {
-  removeErrors ();
-  popupElement.classList.remove('popup_active');  //
-  btnElement.setAttribute("disabled", "true"); //сброс кнопки
-  popupElement.removeEventListener('keydown', escClose);//Удаление обработчика
+  popupElement.classList.remove('popup_active');
+  document.removeEventListener('keydown', escClose);//Удаление обработчика
   popupElement.removeEventListener('click', overlayClose);//Удаление обработчика
 };
 
-  popupClose.addEventListener('click', function () {
-  closePopup(editPopup);
+popupClose.addEventListener('click', function () {
+  removeErrors ();//
+  closePopup(editPopup); 
 });
-  popupCloseAdd.addEventListener('click', function () {
-  closePopup(popupCard);  
+
+popupCloseAdd.addEventListener('click', function () {  
+  removeErrors ();// 
+  closePopup(popupCard); 
+  btnElement.setAttribute("disabled", "true");  //сброс кнопки при закрытии
 });
-  popupImgClose.addEventListener('click',()=>{
+
+popupImgClose.addEventListener('click',()=>{
   closePopup(popupImgBig);//ПОПАП КАРТИНКИ
 });
 

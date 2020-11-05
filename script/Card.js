@@ -1,9 +1,9 @@
 export class Card {
-  constructor({name, link}, cardTemplate, openImagePopup) {
+  constructor( cardTemplate, {name, link}, {handleCardClick}) {
     this._name = name;
     this._link = link;
-    this._cardTemplate = cardTemplate;  
-    this._openImagePopup = openImagePopup;      
+    this._cardTemplate = cardTemplate; 
+    this._handleCardClick = handleCardClick;     
   }
   
 
@@ -18,14 +18,12 @@ export class Card {
   _likeHandler(evt) { //добавление лайка
     evt.target.classList.toggle('element__button-active');
   }
-  _cardHandler() { //
-    this._openImagePopup( this._name, this._link);
-  }
 
+  
   _setEventListeners () { //слушатели
     this._element.querySelector('.element__trash').addEventListener('click', () => this._deleteHandler()); //удаление
     this._element.querySelector('.element__button').addEventListener('click', (evt) => this._likeHandler(evt)); //лайк
-    this._elementImg.addEventListener('click', () => this._cardHandler()); //большая картинка
+    this._element.querySelector('.element__img').addEventListener('click', () => this._handleCardClick(this._name, this._link)); //большая картинка
   }
 
   createElement() { //создание карточки

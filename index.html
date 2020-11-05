@@ -35,7 +35,7 @@
     <template id="card-item" class="card-item"> <!-- ФОРМА ДОБАВЛЕНИЕ КАРТОЧКИ -->
         <li class="element">
             <button class="element__trash" id="trash"></button>
-            <img class="element__img " alt=""> <!-- card-item -->
+            <img class="element__img" src="" alt=""> <!-- card-item -->
             <div class="element__content">
                 <p class="element__title"></p>
                 <button class="element__button"></button>
@@ -52,7 +52,7 @@
             <form class="popup__body popup__edit" id="popup__body_edit"  novalidate>
                 <input autocomplete="off" class="popup__input popup__input-name " id="name" type="text" required minlength="2" maxlength="40">
                 <span class="popup__error" id="name-error"></span>
-                <input autocomplete="off" class="popup__input" id="job" type="text" required minlength="2" maxlength="200"> 
+                <input autocomplete="off" class="popup__input popup__input-job" id="job" type="text" required minlength="2" maxlength="200"> 
                 <span class="popup__error" id="job-error"></span>
                 <button class="popup__button-submit" type="submit" value="Сохранить">Сохранить</button>
             </form> 
